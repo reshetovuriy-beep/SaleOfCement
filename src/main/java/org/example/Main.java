@@ -1,17 +1,27 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        List <Order> order = new ArrayList<>();
+
+        order.add(new Order(null,"16:00:22", "Industrial", 8800));   // добавляем в конец
+//        order.add(new Order(null,"16:00:22", "Industrial", 8800));   // добавляем в конец
+//        order.add(new Order("2021-02-09","08:42:59", "Power Engineer", 17480));
+
+        System.out.println(order.size());   // размер списка
+
+        // перебор всех элементов
+        for (Order o : order) {
+            System.out.println(o.getDate());
+            System.out.println(o.getTime());
+            System.out.println(o.getCompany());
+            System.out.println(o.getQuantity());
+            System.out.println("");
+
         }
     }
 }
