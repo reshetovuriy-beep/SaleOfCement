@@ -1,38 +1,30 @@
 package org.example;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private String date;
-    private String time;
+    private String dateTime;
     private String company;
-    private int quantity;
+    private String quantity;
 
-    public Order(String date, String time, String company, int quantity) {
-        this.date = date;
-        this.time = time;
-        this.company = company;
-        this.quantity = quantity;
+    public Order(String dateTime, String company, String quantity) {
+        this.setDateTime(dateTime);
+        this.setCompany(company);
+        this.setQuantity(quantity);
     }
 
-    public String getDate() {
-        return date;
+    public String getDateTime() {
+        return dateTime;
     }
 
-    public void setDate(String date) {
-        if (date == null) {
-            System.out.println("Дата не может быть NULL");
-        } this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
+    public void setDateTime(String dateTime) {
+        if (dateTime == null) {
+            throw new IllegalArgumentException("Дата и время не могут быть NULL");
+        }
+        this.dateTime = dateTime;
+      }
 
     public String getCompany() {
         return company;
@@ -42,11 +34,11 @@ public class Order {
         this.company = company;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
