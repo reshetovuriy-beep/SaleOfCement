@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.order.Order;
+import org.example.order.order;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import static org.example.service.printOrders.printOrders;
 public class Main {
     public static void main(String[] args) {
 
-        List <Order> orders = new ArrayList<>();
+        List <order> orders = new ArrayList<>();
 
         // переменная для имени файла из которого загружаем список заказов
         String fileName;

@@ -1,7 +1,7 @@
 package org.example.service;
 
 import org.example.Main;
-import org.example.order.Order;
+import org.example.order.order;
 
 import java.io.InputStream;
 import java.time.LocalDateTime;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class fileService {
 
-    public static List<Order> ordersLoadFromFile (String fileName, List <Order> orders) {
+    public static List<order> ordersLoadFromFile (String fileName, List <order> orders) {
         //метод для загрузки списка заказов из файла
 
 
@@ -56,7 +56,7 @@ public class fileService {
                     int quantity = Integer.parseInt(parts[2]);
 
                     // 4. Создаем объект Order и добавляем в список
-                    Order order = new Order(dateTime, company, quantity);
+                    order order = new order(dateTime, company, quantity);
                     orders.add(order);
 
                 } catch (NumberFormatException e) {
