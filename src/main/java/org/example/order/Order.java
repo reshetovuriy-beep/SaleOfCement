@@ -44,7 +44,7 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public static List <Order> OrdersLoadFromFile (String fileName,List <Order> orders) {
+    public static List <Order> ordersLoadFromFile (String fileName,List <Order> orders) {
         //метод для загрузки списка заказов из файла
 
 
@@ -105,7 +105,7 @@ public class Order {
 
     }
 
-    public static void PrintOrders (List <Order> orders) {
+    public static void printOrders (List <Order> orders) {
         // метод для вывода списка заказов содержащихся в orders
         // перебор всех элементов
         for (Order o : orders) {

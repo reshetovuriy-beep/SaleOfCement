@@ -6,8 +6,8 @@ import java.util.List;
 import java.io.InputStream;
 import java.util.Scanner;
 
-import static org.example.Order.OrdersLoadFromFile;
-import static org.example.Order.PrintOrders;
+import static org.example.Order.ordersLoadFromFile;
+import static org.example.Order.printOrders;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,10 +18,10 @@ public class Main {
         String fileName;
         fileName = "/discount_day.txt";
         //загружаем список заказов
-        OrdersLoadFromFile (fileName, orders);
+        ordersLoadFromFile (fileName, orders);
 
         //выводим список заказов
-        PrintOrders(orders);
+        printOrders(orders);
 
 
 
