@@ -1,13 +1,12 @@
 package org.example;
 
+import org.example.order.Order;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import java.io.InputStream;
-import java.util.Scanner;
-
-import static org.example.Order.ordersLoadFromFile;
-import static org.example.Order.printOrders;
+import static org.example.service.fileService.ordersLoadFromFile;
+import static org.example.service.printOrders.printOrders;
 
 public class Main {
     public static void main(String[] args) {
