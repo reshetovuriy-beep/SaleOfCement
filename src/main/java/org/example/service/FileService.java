@@ -1,7 +1,7 @@
 package org.example.service;
 
 import org.example.Main;
-import org.example.order.order;
+import org.example.order.Order;
 
 import java.io.InputStream;
 import java.time.LocalDateTime;
@@ -9,9 +9,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
-public class fileService {
+public class FileService {
 
-    public static List<order> ordersLoadFromFile (String fileName, List <order> orders) {
+    public static List<Order> ordersLoadFromFile (String fileName, List <Order> orders) {
         //метод для загрузки списка заказов из файла
 
 
@@ -44,11 +44,11 @@ public class fileService {
 
                     // Проверка: должно быть ровно 3 поля
                     if (parts.length != 3) {
-                        throw new IllegalArgumentException("Неверное количество полей (ожидалось 3, найдено " + parts.length + ")");
+                        throw new IncorrectInputException("Неверное количество полей (ожидалось 3, найдено " + parts.length + ")");
                     }
-                    //Проверка на положительный объем закупаемого цемента, кастомный Exception
-                    if (Integer.parseInt(parts[2]) < 0) {
-                        throw new IllegalArgumentException("Неверный объем цемента, не может быть меньше 0 в заказе компании " + parts[1] + " от " + parts[0]);
+                    //Проверка на положительный объем закупаемого цемента,
+                    if (!(parts[2].matches("\\d+"))) {
+                        throw new IncorrectInputException("Неверное задан объем цемента, должно быть целое положительное число");
                     }
 
                     LocalDateTime dateTime = LocalDateTime.parse(parts[0], DateTimeFormatter.ISO_LOCAL_DATE_TIME);
@@ -56,18 +56,16 @@ public class fileService {
                     int quantity = Integer.parseInt(parts[2]);
 
                     // 4. Создаем объект Order и добавляем в список
-                    order order = new order(dateTime, company, quantity);
+                    Order order = new Order(dateTime, company, quantity);
                     orders.add(order);
 
-                } catch (NumberFormatException e) {
-                    System.err.println("Ошибка формата числа в строке " + lineNumber + ": " + e.getMessage());
-                } catch (IllegalArgumentException e) {
+                }   catch (IncorrectInputException e) {
                     System.err.println("Ошибка в строке " + lineNumber + ": " + e.getMessage());
                 }
+
             }
-        } catch (Exception e) {
-            System.err.println("Произошла ошибка при чтении файла: " + e.getMessage());
         }
+
 
         // Проверка результата
         System.out.println("Успешно загружено заказов: " + orders.size());

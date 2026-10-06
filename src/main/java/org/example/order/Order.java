@@ -2,12 +2,12 @@ package org.example.order;
 
 import java.time.LocalDateTime;
 
-public class order {
+public class Order {
     private LocalDateTime dateTime;
     private String company;
     private int quantity;
 
-    public order(LocalDateTime dateTime, String company, int quantity) {
+    public Order(LocalDateTime dateTime, String company, int quantity) {
         this.setDateTime(dateTime);
         this.setCompany(company);
         this.setQuantity(quantity);
