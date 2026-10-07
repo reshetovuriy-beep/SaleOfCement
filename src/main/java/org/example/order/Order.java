@@ -1,5 +1,7 @@
 package org.example.order;
 
+import org.example.service.IncorrectInputException;
+
 import java.time.LocalDateTime;
 
 public class Order {
@@ -19,7 +21,7 @@ public class Order {
 
     public void setDateTime(LocalDateTime dateTime) {
         if (dateTime == null) {
-            throw new IllegalArgumentException("Дата и время не могут быть NULL");
+            throw new IncorrectInputException("Дата и время не могут быть NULL");
         }
         this.dateTime = dateTime;
       }

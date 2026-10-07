@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a331d5f-51cb-4a42-adfd-c72ec4b2589b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/IncorrectInputException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/order/order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/fileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/printOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/PrintOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/discount_day.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/discount_day.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/FileService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

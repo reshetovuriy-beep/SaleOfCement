@@ -20,8 +20,7 @@ public class FileService {
         InputStream inputStream = Main.class.getResourceAsStream(fileName);
 
         if (inputStream == null) {
-            System.err.println("Ошибка: Файл " + fileName + " не найден в ресурсах!");
-            return orders;
+            throw new IncorrectInputException("Ошибка: Файл " + fileName + " не найден в ресурсах!");
         }
 
         // 2. Читаем файл построчно
@@ -36,7 +35,7 @@ public class FileService {
                     continue;
                 }
 
-                try {
+             //   try {
                     // 3. Разбиваем строку на части по |
                     String[] parts = line.split("\\|");
 
@@ -59,9 +58,11 @@ public class FileService {
                     Order order = new Order(dateTime, company, quantity);
                     orders.add(order);
 
-                }   catch (IncorrectInputException e) {
-                    System.err.println("Ошибка в строке " + lineNumber + ": " + e.getMessage());
-                }
+             //   }
+                // не надо ловить свой exception, проблема возникла, программа завершается с ошибкой , это нормально
+                // catch (IncorrectInputException e) {
+                // System.err.println("Ошибка в строке " + lineNumber + ": " + e.getMessage());
+                // }
 
             }
         }
