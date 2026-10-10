@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class FileService {
 
-    public static List<Order> ordersLoadFromFile (String fileName, List <Order> orders) {
+    public static List<Order> ordersLoadFromFile (String fileName, List <Order> orders, String separator) {
         //метод для загрузки списка заказов из файла
 
 
@@ -37,7 +37,7 @@ public class FileService {
 
              //   try {
                     // 3. Разбиваем строку на части по |
-                    String[] parts = line.split("\\|");
+                    String[] parts = line.split(separator);
 
                     //сюда нужно добавить адаптер под разные разделители
 

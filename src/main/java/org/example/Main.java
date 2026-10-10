@@ -14,10 +14,14 @@ public class Main {
         List <Order> orders = new ArrayList<>();
 
         // переменная для имени файла из которого загружаем список заказов
-        String fileName;
-        fileName = "/discount_day.txt";
+        String fileName = "/discount_day.txt";
+        String separator = "\\|";
         //загружаем список заказов
-        ordersLoadFromFile (fileName, orders);
+        ordersLoadFromFile (fileName, orders, separator);
+
+        fileName = "/discount_day_without_ext";
+        separator = "#";
+        ordersLoadFromFile (fileName, orders, separator);
 
         //выводим список заказов
         printOrders(orders);
