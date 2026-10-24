@@ -4,12 +4,10 @@ import org.example.Main;
 import org.example.order.Order;
 
 import java.io.InputStream;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
+import org.example.service.FileParser;
 
-import static org.example.service.FileParser.orderParse;
 
 public class FileService {
 
@@ -24,6 +22,7 @@ public class FileService {
         if (inputStream == null) {
             throw new IncorrectInputException("Ошибка: Файл " + fileName + " не найден в ресурсах!");
         }
+        FileParser fileParser = new FileParser(new AdapterPipeLine());
 
         // 2. Читаем файл построчно
         try (Scanner scanner = new Scanner(inputStream)) {
@@ -37,10 +36,16 @@ public class FileService {
                     continue;
                 }
                 // 3. Создаем объект Order и добавляем в список
-                    orders.add(orderParse(line));
+                orders.add(fileParser.orderParse(line));
 
-        // 4. Проверка результата
-        System.out.println("Успешно загружено заказов: " + orders.size());
-        return orders;
+
+
+
+            }
+            // 4. Проверка результата
+            System.out.println("Успешно загружено заказов: " + orders.size());
+            return orders;
+        }
     }
-}
+    }
+

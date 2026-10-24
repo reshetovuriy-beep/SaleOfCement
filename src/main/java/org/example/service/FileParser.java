@@ -7,9 +7,17 @@ import java.time.format.DateTimeFormatter;
 
 public class FileParser {
 
-    public static Order orderParse (String line) {
+    private final Adapter adapter;
 
-        String[] parts = line.split("\\|");
+    // Внедряем адаптер через конструктор
+    public FileParser(Adapter adapter) {
+        this.adapter = adapter;
+    }
+
+
+    public Order orderParse (String line) {
+
+        String[] parts = adapter.adapt(line);
 
         //сюда нужно добавить адаптер под разные разделители
 

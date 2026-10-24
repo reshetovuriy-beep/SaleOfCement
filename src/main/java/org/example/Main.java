@@ -14,7 +14,8 @@ public class Main {
         List <Order> orders = new ArrayList<>();
 
         // переменная для имени файла из которого загружаем список заказов
-        String fileName = "/discount_day.txt";
+    //    String fileName = "/discount_day.txt";
+        String fileName = "/discount_day_without_ext";
         //загружаем список заказов
         ordersLoadFromFile (fileName, orders);
 

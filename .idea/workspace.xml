@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a331d5f-51cb-4a42-adfd-c72ec4b2589b" name="Changes" comment="add metod OrdersLoadFromFile, PrintOrders - Corrections based on comments-5">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/AdapterLattice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/AdapterPipeLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/Adapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/FileParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/FileParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/FileService.java" afterDir="false" />
     </list>
@@ -19,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
