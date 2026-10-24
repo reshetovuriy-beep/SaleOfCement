@@ -9,9 +9,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
+import static org.example.service.FileParser.orderParse;
+
 public class FileService {
 
-    public static List<Order> ordersLoadFromFile (String fileName, List <Order> orders, String separator) {
+    public static List<Order> ordersLoadFromFile (String fileName, List <Order> orders) {
         //метод для загрузки списка заказов из файла
 
 
@@ -34,44 +36,11 @@ public class FileService {
                 if (line.isEmpty()) {
                     continue;
                 }
+                // 3. Создаем объект Order и добавляем в список
+                    orders.add(orderParse(line));
 
-             //   try {
-                    // 3. Разбиваем строку на части по |
-                    String[] parts = line.split(separator);
-
-                    //сюда нужно добавить адаптер под разные разделители
-
-                    // Проверка: должно быть ровно 3 поля
-                    if (parts.length != 3) {
-                        throw new IncorrectInputException("Неверное количество полей (ожидалось 3, найдено " + parts.length + ")");
-                    }
-                    //Проверка на положительный объем закупаемого цемента,
-                    if (!(parts[2].matches("\\d+"))) {
-                        throw new IncorrectInputException("Неверное задан объем цемента, должно быть целое положительное число");
-                    }
-
-                    LocalDateTime dateTime = LocalDateTime.parse(parts[0], DateTimeFormatter.ISO_LOCAL_DATE_TIME);
-                    String company = parts[1];
-                    int quantity = Integer.parseInt(parts[2]);
-
-                    // 4. Создаем объект Order и добавляем в список
-                    Order order = new Order(dateTime, company, quantity);
-                    orders.add(order);
-
-             //   }
-                // не надо ловить свой exception, проблема возникла, программа завершается с ошибкой , это нормально
-                // catch (IncorrectInputException e) {
-                // System.err.println("Ошибка в строке " + lineNumber + ": " + e.getMessage());
-                // }
-
-            }
-        }
-
-
-        // Проверка результата
+        // 4. Проверка результата
         System.out.println("Успешно загружено заказов: " + orders.size());
         return orders;
-
-
     }
 }
